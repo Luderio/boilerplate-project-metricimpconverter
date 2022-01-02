@@ -9,7 +9,7 @@ suite('Unit Tests', function(){
         //for whole number input
         test('Whole Number Input', function() {
 
-            let convertHandler = new ConvertHandler();
+            //let convertHandler = new ConvertHandler();
 
             assert.isNumber(convertHandler.getNum, 'Error: input must be a number');
         });

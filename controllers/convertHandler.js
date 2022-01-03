@@ -28,6 +28,11 @@ function ConvertHandler() {
 
     if (result == "l") {
       result.toUpperCase();
+    }else if (result == "L") {
+      result.toUpperCase();
+    }
+    else {
+      result.toLowerCase();
     }
     
     return result;

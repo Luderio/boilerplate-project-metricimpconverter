@@ -50,6 +50,14 @@ function ConvertHandler() {
       result = initNum / miToKm;
     }else if (initUnit == "mi" || initUnit == "MI") {
       result = initNum * miToKm;
+    }else if (initUnit == "gal" || initUnit == "GAL") {
+      result = initNum * galToL;
+    }else if (initUnit == "l" || initUnit == "L") {
+      result = initNum / galToL;
+    }else if (initUnit == "lbs" || initUnit == "LBS") {
+      result = initNum * lbsToKg;
+    }else if (initUnit == "kg" || initUnit == "KG") {
+      result = initNum / lbsToKg;
     }
     
     return result.toFixed(5);

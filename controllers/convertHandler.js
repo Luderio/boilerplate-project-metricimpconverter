@@ -1,7 +1,14 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    let result = input.split(" ");//change this later
+    let result;
+    let inputNumber = input.split("");
+
+    let number = inputNumber.filter(num => {
+      if (Number(num) || num == ".") {
+        result = num;
+      }
+    });
     
     return result;
   };

@@ -19,7 +19,7 @@ module.exports = function (app) {
     //console.log(JSON.stringify(toString));
 
     document.getElementById('result').innerHTML = initNum + " " + convertHandler.spellOutUnit(initUnit) + " converts to " + returnNum + " " + convertHandler.spellOutUnit(returnUnit)
-
+    document.getElementById('jsonResult').innerHTML = JSON.stringify(toString);
   });
 
   

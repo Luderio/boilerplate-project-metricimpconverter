@@ -29,13 +29,40 @@ function ConvertHandler() {
   
   this.getReturnUnit = function(initUnit) {
     let result;
+
+    if (initUnit == "km" || initUnit == "KM") {
+      result = "mi";
+    }else if (initUnit == "mi" || initUnit == "MI") {
+      result = "km";
+    }else if (initUnit == "gal" || initUnit == "GAL") {
+      result = "L";
+    }else if (initUnit == "l" || initUnit == "L") {
+      result = "gal";
+    }else if (initUnit == "lbs" || initUnit == "LBS") {
+      result = "kg";
+    }else if (initUnit == "kg" || initUnit == "KG") {
+      result = "lbs";
+    }
     
     return result;
   };
 
   this.spellOutUnit = function(unit) {
     let result;
-    
+
+    if (unit == "kg" || unit == "KG") {
+      result = "kilograms";
+    }else if (unit == "lbs" || unit == "LBS") {
+      result = "pounds";
+    }else if (unit == "km" || unit == "KM") {
+      result = "kilometers";
+    }else if (unit == "mi" || unit == "MI") {
+      result = "miles";
+    }else if (unit == "gal" || unit == "GAL") {
+      result = "gallons";
+    }else if (unit == "l" || unit == "L") {
+      result = "liters";
+    }
     return result;
   };
   
@@ -64,7 +91,13 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    let result;
+    let result = {
+      "initNum": initNum,
+      "initUnit": initUnit,
+      "returnNum": returnNum,
+      "returnUnit": returnUnit,
+      "string": `${initNum} ${this.spellOutUnit(initUnit)} converts to ${returnNum} ${this.spellOutUnit(returnUnit)}`
+    }
     
     return result;
   };

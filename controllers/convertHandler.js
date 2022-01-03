@@ -16,15 +16,21 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     let inputUnit = input.split("");
-    let result = [];
+    let filteredUnits = [];
 
     let unit = inputUnit.filter(units => {
       if (!Number(units) && units !== ".") {
-        result.push(units);
+        filteredUnits.push(units);
       }
     });
+
+    result = filteredUnits.join("");
+
+    if (result == "l") {
+      result.toUpperCase();
+    }
     
-    return result.join("");
+    return result;
   };
   
   this.getReturnUnit = function(initUnit) {
@@ -91,21 +97,6 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    if (initUnit == "l" || returnUnit == "l") {
-      initUnit.toUpperCase();
-      returnUnit.toUpperCase();
-    }else if (initUnit == "L" || returnUnit == "L") {
-      initUnit.toUpperCase();
-      returnUnit.toUpperCase();
-    }
-
-    if (initUnit == initUnit.toUpperCase() || returnUnit == returnUnit.toUpperCase()) {
-      if (initUnit !== "l" || initUnit !== "L" && returnUnit !== "l" || returnUnit !== "L") {
-        initUnit.toLowerCase();
-        returnUnit.toLowerCase();
-      }
-    }
-
     let result = {
       "initNum": initNum,
       "initUnit": initUnit,

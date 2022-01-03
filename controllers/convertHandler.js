@@ -2,11 +2,14 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     let inputNumber = input.split("");
+    let result = [];
 
     let number = inputNumber.filter(num => {
-      return num === Number(num) || num === ".";
+      if (num == /[0-9]/ || num == ".") {
+        result.push(num);
+      }
     });
-    let result = number;
+    
     return result;
   };
   

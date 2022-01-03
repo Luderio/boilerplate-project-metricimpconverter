@@ -1,7 +1,7 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    let result = input.split("");
+    let result = input.split(" ");//change this later
     
     return result;
   };

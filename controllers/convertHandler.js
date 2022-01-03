@@ -19,7 +19,7 @@ function ConvertHandler() {
     let result = [];
 
     let unit = inputUnit.filter(units => {
-      if (units !== Number(units) || units !== ".") {
+      if (!Number(units) && units !== ".") {
         result.push(units);
       }
     });

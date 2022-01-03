@@ -17,8 +17,8 @@ module.exports = function (app) {
 
     console.log(input);
     console.log(initNum);
-    /*console.log(initUnit);
     console.log(initUnit);
+    /*console.log(initUnit);
     console.log(initUnit);
     console.log(initUnit);*/
 

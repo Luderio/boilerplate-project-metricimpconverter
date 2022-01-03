@@ -1,5 +1,6 @@
 function ConvertHandler() {
   
+  //to get the number on the input without the unit.
   this.getNum = function(input) {
     let inputNumber = input.split("");
     let result = [];
@@ -14,9 +15,16 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    let result;
+    let inputUnit = input.split("");
+    let result = [];
+
+    let unit = inputUnit.filter(units => {
+      if (units !== Number(units) || units !== ".") {
+        result.push(units);
+      }
+    });
     
-    return result;
+    return result.join("");
   };
   
   this.getReturnUnit = function(initUnit) {

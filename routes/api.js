@@ -15,7 +15,7 @@ module.exports = function (app) {
     let returnUnit = convertHandler.getReturnUnit(initUnit);
     let toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
 
-    console.log(jSON.stringify(toString));
+    console.log(JSON.stringify(toString));
 
   });
 

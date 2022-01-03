@@ -15,8 +15,10 @@ module.exports = function (app) {
     let returnUnit = convertHandler.getReturnUnit(initUnit);
     let toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
 
-    console.log(initNum + " " + convertHandler.spellOutUnit(initUnit) + " converts to " + returnNum + " " + convertHandler.spellOutUnit(returnUnit));
-    console.log(JSON.stringify(toString));
+    //console.log(initNum + " " + convertHandler.spellOutUnit(initUnit) + " converts to " + returnNum + " " + convertHandler.spellOutUnit(returnUnit));
+    //console.log(JSON.stringify(toString));
+
+    document.getElementById('result').innerHTML = initNum + " " + convertHandler.spellOutUnit(initUnit) + " converts to " + returnNum + " " + convertHandler.spellOutUnit(returnUnit)
 
   });
 

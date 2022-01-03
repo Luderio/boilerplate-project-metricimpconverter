@@ -26,16 +26,11 @@ function ConvertHandler() {
 
     result = filteredUnits.join("");
 
-    if (result == "l") {
-      result.toUpperCase();
-    }else if (result == "L") {
-      result.toUpperCase();
+    if (result == "l" || result == "L") {
+      return result.toUpperCase();
+    }else {
+      return result.toLowerCase();
     }
-    else {
-      result.toLowerCase();
-    }
-    
-    return result;
   };
   
   this.getReturnUnit = function(initUnit) {

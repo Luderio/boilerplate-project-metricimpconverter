@@ -91,6 +91,21 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
+    if (initUnit == "l" || returnUnit == "l") {
+      initUnit.toUpperCase();
+      returnUnit.toUpperCase();
+    }else if (initUnit == "L" || returnUnit == "L") {
+      initUnit.toUpperCase();
+      returnUnit.toUpperCase();
+    }
+
+    if (initUnit == initUnit.toUpperCase() || returnUnit == returnUnit.toUpperCase()) {
+      if (initUnit !== "l" || initUnit !== "L" && returnUnit !== "l" || returnUnit !== "L") {
+        initUnit.toLowerCase();
+        returnUnit.toLowerCase();
+      }
+    }
+
     let result = {
       "initNum": initNum,
       "initUnit": initUnit,

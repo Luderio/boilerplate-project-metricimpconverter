@@ -5,12 +5,12 @@ function ConvertHandler() {
     let result = [];
 
     let number = inputNumber.filter(num => {
-      if (num == /[0-9]/ || num == ".") {
+      if (num == Number(num) || num == ".") {
         result.push(num);
       }
     });
     
-    return result;
+    return result.join("");
   };
   
   this.getUnit = function(input) {

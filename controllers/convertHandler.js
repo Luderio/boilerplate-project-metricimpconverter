@@ -11,7 +11,7 @@ function ConvertHandler() {
       }
     });
     
-    finalResult = result.join("");
+    let finalResult = result.join("");
 
     return finalResult;
   };

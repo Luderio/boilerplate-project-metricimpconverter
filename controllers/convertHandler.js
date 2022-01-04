@@ -19,10 +19,15 @@ function ConvertHandler() {
     let result = [];
 
     let unit = inputUnit.filter(units => {
-      if (!Number(units) && units !== ".") {
+      let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
+
+      if (!Number(units) && units !== "." && validUnits.includes(units)) {
         result.push(units);
+      }else {
+        result.push("invalid unit");
       }
     });
+
 
     return result.join("");
 

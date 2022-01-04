@@ -6,7 +6,7 @@ function ConvertHandler() {
     let result = [];
 
     let number = inputNumber.filter(num => {
-      if (num == Number(num) || num == "." || num == 0) {
+      if (num == Number(num) || num == ".") {
         result.push(num);
       }
     });

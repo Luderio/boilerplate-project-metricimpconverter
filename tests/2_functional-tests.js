@@ -29,6 +29,7 @@ suite('Functional Tests', function() {
             .query({input: '32g'})
             .end(function(err, res) {
                 assert.equal(res.body, 'invalid unit');
+                done();
             });
         });
     });

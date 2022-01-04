@@ -79,7 +79,7 @@ suite('Unit Tests', function(){
             let expect = ['l', 'gal', 'km', 'mi', 'kg', 'lbs'];
 
             input.forEach((units, i) => {
-                assert.equal(convertHandler.getReturnUnit(unit), expect[i]);
+                assert.equal(convertHandler.getReturnUnit(units), expect[i]);
             });
             done();
         });

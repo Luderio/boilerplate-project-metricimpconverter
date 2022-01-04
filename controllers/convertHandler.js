@@ -25,8 +25,10 @@ function ConvertHandler() {
     });
 
     let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
-    if (!validUnits.includes(result.toString())) {
-      return "Invalid Unit";
+    
+    if (!validUnits.includes(result.join(""))) {
+      result = [];
+      result.push("invalid unit");
     }
 
     return result.join("");

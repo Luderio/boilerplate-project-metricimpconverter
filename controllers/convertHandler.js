@@ -36,18 +36,23 @@ function ConvertHandler() {
   this.getReturnUnit = function(initUnit) {
     let result;
 
-    if (initUnit == "km" || initUnit == "KM") {
-      result = "mi";
-    }else if (initUnit == "mi" || initUnit == "MI") {
-      result = "km";
-    }else if (initUnit == "gal" || initUnit == "GAL") {
-      result = "L";
+    if (initUnit == "gal" || initUnit == "GAL") {
+      result = "L"
     }else if (initUnit == "l" || initUnit == "L") {
-      result = "gal";
-    }else if (initUnit == "lbs" || initUnit == "LBS") {
-      result = "kg";
+      result = "gal"
+    }
+
+    if (initUnit == "lbs" || initUnit == "LBS") {
+      result = "kg"
     }else if (initUnit == "kg" || initUnit == "KG") {
-      result = "lbs";
+      result = "lbs"
+    }
+
+
+    if (initUnit == "mi" || initUnit == "MI") {
+      result = "km"
+    }else if (initUnit == "km" || initUnit == "KM") {
+      result = "mi"
     }
     
     return result;
@@ -60,15 +65,20 @@ function ConvertHandler() {
       result = "kilograms";
     }else if (unit == "lbs" || unit == "LBS") {
       result = "pounds";
-    }else if (unit == "km" || unit == "KM") {
+    }
+    
+    if (unit == "km" || unit == "KM") {
       result = "kilometers";
     }else if (unit == "mi" || unit == "MI") {
       result = "miles";
-    }else if (unit == "gal" || unit == "GAL") {
+    }
+    
+    if (unit == "gal" || unit == "GAL") {
       result = "gallons";
     }else if (unit == "l" || unit == "L") {
       result = "liters";
     }
+    
     return result;
   };
   
@@ -79,18 +89,22 @@ function ConvertHandler() {
 
     let result;
 
-    if (initUnit == "km" || initUnit == "KM") {
-      result = initNum / miToKm;
-    }else if (initUnit == "mi" || initUnit == "MI") {
-      result = initNum * miToKm;
-    }else if (initUnit == "gal" || initUnit == "GAL") {
+    if (initUnit == "gal" || initUnit == "GAL") {
       result = initNum * galToL;
     }else if (initUnit == "l" || initUnit == "L") {
       result = initNum / galToL;
-    }else if (initUnit == "lbs" || initUnit == "LBS") {
+    }
+
+    if (initUnit == "lbs" || initUnit == "LBS") {
       result = initNum * lbsToKg;
     }else if (initUnit == "kg" || initUnit == "KG") {
       result = initNum / lbsToKg;
+    }
+
+    if (initUnit == "mi" || initUnit == "MI") {
+      result = initNum * miToKm;
+    }else if (initUnit == "km" || initUnit == "KM") {
+      result = initNum / miToKm;
     }
     
     return result.toFixed(5);

@@ -44,19 +44,31 @@ suite('Unit Tests', function(){
         });
         //Miles to Kilometers
         test('Mi to Km', function(done) {
-
+            let input = [5, 'mi'];
+            let expected = 8.04672;
+            assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1, 'Error: conversion not correct');
+            done();
         });
         //Kilometers to Miles
         test('Km to Mi', function(done) {
-
+            let input = [5, 'km'];
+            let expected = 3.10686;
+            assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1, 'Error: conversion not correct');
+            done();
         });
         //Pounds to Kilograms
-        test('Lbs to Kl', function(done) {
-
+        test('Lbs to Kg', function(done) {
+            let input = [5, 'lbs'];
+            let expected = 2.26796;
+            assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1, 'Error: conversion not correct');
+            done();
         });
         //Kilograms to Pounds
-        test('Kl to Lbs', function(done) {
-
+        test('Kg to Lbs', function(done) {
+            let input = [5, 'kg'];
+            let expected = 11.0231;
+            assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1, 'Error: conversion not correct');
+            done();
         });
     });
 

@@ -101,7 +101,7 @@ function ConvertHandler() {
       result = (initNum / miToKm).toFixed(5);
     }
     
-    return result;
+    return Number(result);
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {

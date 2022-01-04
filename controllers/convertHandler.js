@@ -16,21 +16,16 @@ function ConvertHandler() {
   
   this.getUnit = function(input) {
     let inputUnit = input.split("");
-    let filteredUnits = [];
+    let result = [];
 
     let unit = inputUnit.filter(units => {
       if (!Number(units) && units !== ".") {
-        filteredUnits.push(units);
+        result.push(units);
       }
     });
 
-    result = filteredUnits.join("");
+    return result.join("");
 
-    if (result == "l" || result == "L") {
-      return result.toUpperCase();
-    }else {
-      return result.toLowerCase();
-    }
   };
   
   this.getReturnUnit = function(initUnit) {

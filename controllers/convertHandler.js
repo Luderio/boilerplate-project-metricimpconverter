@@ -6,7 +6,7 @@ function ConvertHandler() {
     let result = [];
 
     let number = inputNumber.filter(num => {
-      if (num == Number(num) || num == ".") {
+      if (num == Number(num) || num == "." || num == 0) {
         result.push(num);
       }
     });
@@ -25,7 +25,7 @@ function ConvertHandler() {
     });
 
     let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
-    
+
     if (!validUnits.includes(result.join(""))) {
       result = [];
       result.push("invalid unit");

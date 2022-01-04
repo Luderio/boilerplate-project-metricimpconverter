@@ -21,7 +21,7 @@ suite('Unit Tests', function(){
         test('For Each Valid Unit Inputs', function(done) {
             let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
             input.forEach((unit) => {
-                assert.equal(convertHandler.getUnit(32 + unit), unit);
+                assert.equal(convertHandler.getUnit(32 + unit), unit, 'Error: Invalid Unit');
             });
             done();
         });
@@ -80,7 +80,7 @@ suite('Unit Tests', function(){
             let expect = ['l', 'gal', 'km', 'mi', 'kg', 'lbs'];
 
             input.forEach((units, i) => {
-                assert.equal(convertHandler.getReturnUnit(units), expect[i]);
+                assert.equal(convertHandler.getReturnUnit(units), expect[i], 'Error: invalid returned Units');
             });
             done();
         });

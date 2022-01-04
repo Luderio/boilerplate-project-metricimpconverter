@@ -11,15 +11,15 @@ suite('Functional Tests', function() {
 
         suite('GET /api/convert => conversion object', function() {
 
-            test('Convert 10L (valid input)', function(done) {
+            test('Convert 15L (valid input)', function(done) {
                 chai.request(server)
                 .get('/api/convert')
-                .query({input: '10L'})
+                .query({input: '15L'})
                 .end(function(err, res) {
                     assert.equal(res.status, 200);
-                    assert.equal(res.body.initNum, 10);
+                    assert.equal(res.body.initNum, 15);
                     assert.equal(res.body.initUnit, 'L');
-                    assert.approximately(res.body.returnNum, 2.64172, 0.1);
+                    assert.approximately(res.body.returnNum, 3.96258, 0.1);
                     assert.equal(res.body.returnUnit, 'gal');
                     done();
                 });

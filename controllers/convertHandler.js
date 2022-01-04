@@ -8,6 +8,7 @@ function ConvertHandler() {
     let number = inputNumber.filter(num => {
       if (num == Number(num) || num == "." || num == 0) {
         result.push(num);
+        console.log(num);
       }
     });
     

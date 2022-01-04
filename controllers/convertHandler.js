@@ -37,7 +37,7 @@ function ConvertHandler() {
     let result;
 
     if (initUnit == "gal" || initUnit == "GAL") {
-      result = "L"
+      result = "l"
     }else if (initUnit == "l" || initUnit == "L") {
       result = "gal"
     }

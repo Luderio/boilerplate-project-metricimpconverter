@@ -25,6 +25,11 @@ suite('Unit Tests', function(){
             });
             done();
         });
+
+        test('Unknown Unit Input', function(done) {
+            let input = '32g';
+            assert.equal(convertHandler.getUnit(input), 'invalid unit', 'Error: Invalid Unit');
+        });
     });
     
     //Tests for unit conversion.

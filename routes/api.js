@@ -15,6 +15,10 @@ module.exports = function (app) {
     let returnUnit = convertHandler.getReturnUnit(initUnit);
     let toString = convertHandler.getString(initNum, initUnit, returnNum, returnUnit);
 
+    if (initUnit === "invalid unit") {
+      response.json("invalid unit");
+    }
+
     response.json(toString)
   });
 

@@ -19,13 +19,15 @@ function ConvertHandler() {
     let result = [];
 
     let unit = inputUnit.filter(units => {
-      let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
-
       if (!Number(units) && units !== ".") {
         result.push(units);
       }
     });
 
+    let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
+    if (!validUnits.includes(result)) {
+      return "Invalid Unit";
+    }
 
     return result.join("");
 

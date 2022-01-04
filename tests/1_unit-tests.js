@@ -17,10 +17,11 @@ suite('Unit Tests', function(){
     
     //Tests for the valid units.
     suite('Function convertHandler.getUnit(input)', function() {
+
         test('For Each Valid Unit Inputs', function(done) {
             let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
             input.forEach((unit) => {
-                assert.equal(convertHandler.getUnit(32 + unit), unit, 'Error: Invalid Unit');
+                assert.equal(convertHandler.getUnit(32 + unit), unit);
             });
             done();
         });

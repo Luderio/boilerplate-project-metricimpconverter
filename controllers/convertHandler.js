@@ -78,7 +78,7 @@ function ConvertHandler() {
     }else if (unit == "l" || unit == "L") {
       result = "liters";
     }
-    
+
     return result;
   };
   
@@ -90,24 +90,24 @@ function ConvertHandler() {
     let result;
 
     if (initUnit == "gal" || initUnit == "GAL") {
-      result = initNum * galToL;
+      result = initNum * galToL.toFixed(5);
     }else if (initUnit == "l" || initUnit == "L") {
-      result = initNum / galToL;
+      result = initNum / galToL.toFixed(5);
     }
 
     if (initUnit == "lbs" || initUnit == "LBS") {
-      result = initNum * lbsToKg;
+      result = initNum * lbsToKg.toFixed(5);
     }else if (initUnit == "kg" || initUnit == "KG") {
-      result = initNum / lbsToKg;
+      result = initNum / lbsToKg.toFixed(5);
     }
 
     if (initUnit == "mi" || initUnit == "MI") {
-      result = initNum * miToKm;
+      result = initNum * miToKm.toFixed(5);
     }else if (initUnit == "km" || initUnit == "KM") {
-      result = initNum / miToKm;
+      result = initNum / miToKm.toFixed(5);
     }
     
-    return result.toFixed(5);
+    return result;
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {

@@ -2,18 +2,12 @@ function ConvertHandler() {
   
   //to get the number on the input without the unit.
   this.getNum = function(input) {
-    let inputNumber = input.split("");
-    let result = [];
+    let inputRegex = /[a-z]+|[^a-z]+/gi;
+    let result;
 
-    let number = inputNumber.filter(num => {
-      if (num == Number(num) || num == ".") {
-        result.push(num);
-      }
-    });
-    
-    let finalResult = result.join("");
+    result = input.match(inputRegex)[0];
 
-    return finalResult;
+    return result;
   };
   
   this.getUnit = function(input) {

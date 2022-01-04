@@ -31,7 +31,7 @@ suite('Unit Tests', function(){
         //Gallons to Liters
         test('Gal to L', function(done) {
             let input = [5, 'gal'];
-            let expected = 18.92705;
+            let expected = 18.9271;
             assert.approximately(convertHandler.convert(input[0], input[1]), expected, 0.1, 'Error: conversion not correct');
             done();
         });

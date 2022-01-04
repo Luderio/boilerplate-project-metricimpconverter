@@ -8,11 +8,12 @@ function ConvertHandler() {
     let number = inputNumber.filter(num => {
       if (num == Number(num) || num == "." || num == 0) {
         result.push(num);
-        console.log(num);
       }
     });
     
-    return result.join("");
+    finalResult = result.join("");
+
+    return finalResult;
   };
   
   this.getUnit = function(input) {

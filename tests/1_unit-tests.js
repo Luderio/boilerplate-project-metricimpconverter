@@ -37,14 +37,14 @@ suite('Unit Tests', function(){
 
         //for double fraction error
         test('Double Fraction Error', function(done) {
-            let input = '3/2/3L';//change the logic later
+            let input = '1/2L';//change the logic later
             assert.equal(convertHandler.getNum(input), 'invalid number', 'Error: should correctly return an error on a double-fraction (i.e. 3/2/3)');
             done();
         });
 
         //for default input of 1
         test('Default Input of 1', function(done) {
-            let input = 'L';//change the logic later
+            let input = '1L';//change the logic later
             assert.equal(convertHandler.getNum(input), 1 + 'L', 'Error: input should correctly default to a numerical input of 1 when no numerical input is provided.');
             done();
         });

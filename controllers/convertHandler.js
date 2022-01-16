@@ -8,16 +8,20 @@ function ConvertHandler() {
   //to get the number on the input without the unit.
   this.getNum = function(input) {
     let numberRegex = /[\d]|[\d.\d]|[\d/\d]/g;
+    let invalidNumberRegex = /^[\d.\d.\d$]|^[\d/\d/\d$]/g;
     let result;
 
     if (input.match(numberRegex)) {
-      result = result = input.match(numberRegex);
+      result = input.match(numberRegex);
     }else {
       result = [];
       result.push("invalid number");
     }
 
     result = result.join("");//joins the result array.
+    
+    //for testing/troubleshooting. Remove later.
+    console.log("output: ");
     console.log(result);
 
     return safeEval(result);//returns evaluated input.

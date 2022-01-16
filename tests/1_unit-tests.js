@@ -23,15 +23,15 @@ suite('Unit Tests', function(){
 
         //for fractional input
         test('Fractional Input', function(done) {
-            let input = '32.5L';//change the logic later
-            assert.equal(convertHandler.getNum(input), 32.5, 'Error: should correctly read a fractional input.');
+            let input = '1/2L';//change the logic later
+            assert.equal(convertHandler.getNum(input), 1/2, 'Error: should correctly read a fractional input.');
             done();
         });
 
         //for fractional input with decimal
         test('Fractional Input with Decimal', function(done) {
-            let input = '32.5L';//change the logic later
-            assert.equal(convertHandler.getNum(input), 32.5, 'Error: should correctly read a fractional input with a decimal.');
+            let input = '2.5/6L';//change the logic later
+            assert.equal(convertHandler.getNum(input), 2.5/6, 'Error: should correctly read a fractional input with a decimal.');
             done();
         });
 

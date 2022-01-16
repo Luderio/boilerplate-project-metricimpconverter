@@ -7,39 +7,30 @@ function ConvertHandler() {
 
     result = input.match(numberRegex);
 
-    console.log(result);
-
     return result.join("");
   };
   
   this.getUnit = function(input) {
-    let inputUnit = input.split("");
-    let result = [];
+    let unitRegex = /[a-z]+|[A-Z]+/gi;
+     let result;
 
-    let unit = inputUnit.map(units => {
-      if (!Number(units) && units !== ".") {
-        result.push(units);
-      }
-    });
+     result = input.match(unitRegex);
 
-    console.log(result);
-
-    let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
+     let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
 
     if (!validUnits.includes(result.join(""))) {
       result = [];
       result.push("invalid unit");
     }
 
-    return result.join("");
-
+     return result.join("");
   };
   
   this.getReturnUnit = function(initUnit) {
     let result;
 
     if (initUnit == "gal" || initUnit == "GAL") {
-      result = "l"
+      result = "L"
     }else if (initUnit == "l" || initUnit == "L") {
       result = "gal"
     }
@@ -112,6 +103,14 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
+
+    //logic for proper initUnit case (lowercase/uppercase)
+    if (initUnit === "l" || initUnit === "L") {
+      initUnit = initUnit.toUpperCase();
+    }else {
+      initUnit = initUnit.toLowerCase();
+    }
+
     let result = {
       initNum: initNum,
       initUnit: initUnit,

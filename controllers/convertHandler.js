@@ -18,11 +18,13 @@ function ConvertHandler() {
     let inputUnit = input.split("");
     let result = [];
 
-    let unit = inputUnit.filter(units => {
+    let unit = inputUnit.map(units => {
       if (!Number(units) && units !== ".") {
         result.push(units);
       }
     });
+
+    console.log(result);
 
     let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
 

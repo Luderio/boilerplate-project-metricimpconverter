@@ -13,7 +13,7 @@ function ConvertHandler() {
 
     if (input.match(numberRegex)) {
       result = result = input.match(numberRegex);
-    }else {
+    }else if (!input.match(numberRegex)) {
       result = [];
       result.push("invalid number");
     }

@@ -7,13 +7,12 @@ function ConvertHandler() {
   
   //to get the number on the input without the unit.
   this.getNum = function(input) {
-    let numberRegex = /[\d]|[\d.\d$]|[\d/\d$]/g;
-    //let invalidNumberRegex = /[\d.\d{2,}$]|[\d/\d{2,}$]/gi;
+    let numberRegex = /[\d]|[\d.{1}\d$]|[\d/{1}\d$]/g;
     let result;
 
     if (input.match(numberRegex)) {
       result = result = input.match(numberRegex);
-    }else if (!input.match(numberRegex)) {
+    }else {
       result = [];
       result.push("invalid number");
     }

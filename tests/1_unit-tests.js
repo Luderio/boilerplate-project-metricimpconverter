@@ -83,7 +83,7 @@ suite('Unit Tests', function(){
     suite('Function convertHandler.getReturnUnit(initUnit)', function() {
         test('For Each Valid Unit Inputs', function(done) {
             let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-            let expect = ['l', 'gal', 'km', 'mi', 'kg', 'lbs'];
+            let expect = ['L', 'gal', 'km', 'mi', 'kg', 'lbs'];
 
             input.forEach((units, i) => {
                 assert.equal(convertHandler.getReturnUnit(units), expect[i], 'Error: invalid returned Units');

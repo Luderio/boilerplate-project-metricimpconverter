@@ -7,8 +7,6 @@ function ConvertHandler() {
 
     result = input.match(numberRegex);
 
-    console.log(input);
-
     return result.join("");
   };
   

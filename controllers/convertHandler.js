@@ -24,8 +24,6 @@ function ConvertHandler() {
       }
     });
 
-    console.log(result);
-
     let validUnits = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
 
     if (!validUnits.includes(result.join(""))) {

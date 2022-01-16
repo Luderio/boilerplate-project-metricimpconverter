@@ -10,7 +10,42 @@ suite('Unit Tests', function(){
         //for whole number input
         test('Whole Number Input', function(done) {
             let input = '32L';
-            assert.equal(convertHandler.getNum(input), 32, 'Error: input must be a number');
+            assert.equal(convertHandler.getNum(input), 32, 'Error: should correctly read a whole number input.');
+            done();
+        });
+
+        //Cfor decimal input
+        test('Decimal Number Input', function(done) {
+            let input = '32.5L';
+            assert.equal(convertHandler.getNum(input), 32.5, 'Error: should correctly read a decimal number input');
+            done();
+        });
+
+        //for fractional input
+        test('Fractional Input', function(done) {
+            let input = '32.5L';//change the logic later
+            assert.equal(convertHandler.getNum(input), 32.5, 'Error: should correctly read a fractional input.');
+            done();
+        });
+
+        //for fractional input with decimal
+        test('Fractional Input with Decimal', function(done) {
+            let input = '32.5L';//change the logic later
+            assert.equal(convertHandler.getNum(input), 32.5, 'Error: should correctly read a fractional input with a decimal.');
+            done();
+        });
+
+        //for double fraction error
+        test('Double Fraction Error', function(done) {
+            let input = '32.5L';//change the logic later
+            assert.equal(convertHandler.getNum(input), 32.5, 'Error: should correctly return an error on a double-fraction (i.e. 3/2/3)');
+            done();
+        });
+
+        //for default input of 1
+        test('Default Input of 1', function(done) {
+            let input = '32.5L';//change the logic later
+            assert.equal(convertHandler.getNum(input), 32.5, 'Error: input should correctly default to a numerical input of 1 when no numerical input is provided.');
             done();
         });
     });

@@ -19,6 +19,7 @@ function ConvertHandler() {
     }
 
     result = result.join("");//joins the result array.
+    console.log(result);
 
     return safeEval(result);//returns evaluated input.
   };

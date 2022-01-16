@@ -7,7 +7,7 @@ function ConvertHandler() {
   
   //to get the number on the input without the unit.
   this.getNum = function(input) {
-    let numberRegex = /[\d]|[\d.{1}\d$]|[\d/{1}\d$]/g;
+    let numberRegex = /[\d]|[\d.\d]|[\d/\d]/g;
     let result;
 
     if (input.match(numberRegex)) {

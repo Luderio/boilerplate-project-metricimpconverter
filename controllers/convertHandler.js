@@ -2,10 +2,18 @@ function ConvertHandler() {
   
   //to get the number on the input without the unit.
   this.getNum = function(input) {
-    let numberRegex = /[\d]*|[.]/;
+    let numberRegex = /[\d]|[\d.\d$]|[\d/\d$]/g;
+    //let invalidNumberRegex = /[\d.\d{2,}$]|[\d/\d{2,}$]/gi;
     let result;
 
-    result = input.match(numberRegex);
+    if (input.match(numberRegex)) {
+      result = input.match(numberRegex);
+    }else {
+      result = [];
+      result.push("invalid number");
+    }
+
+    
 
     
 

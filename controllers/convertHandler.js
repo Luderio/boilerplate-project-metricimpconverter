@@ -1,4 +1,9 @@
 function ConvertHandler() {
+
+  //code to handle fractions.
+  const safeEval = (str) => {
+   return Function('"use strict";return (' + str + ")")();
+}
   
   //to get the number on the input without the unit.
   this.getNum = function(input) {
@@ -7,13 +12,15 @@ function ConvertHandler() {
     let result;
 
     if (input.match(numberRegex)) {
-      result = input.match(numberRegex);
+      result = result = input.match(numberRegex);
     }else {
       result = [];
       result.push("invalid number");
     }
 
-    return result.join("");
+    result = result.join("");//joins the result array.
+
+    return safeEval(result);//returns evaluated input.
   };
   
   this.getUnit = function(input) {

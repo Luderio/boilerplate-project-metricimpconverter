@@ -2,15 +2,12 @@ function ConvertHandler() {
   
   //to get the number on the input without the unit.
   this.getNum = function(input) {
-    let numberRegex = /[\d]*/;
+    let numberRegex = /[\d]*|[.]/;
     let result;
 
     result = input.match(numberRegex);
 
-    if (result == !Number(result)) {
-      result = [];
-      result.push("invalid number");
-    }
+    
 
     return result.join("");
   };

@@ -14,7 +14,7 @@ suite('Unit Tests', function(){
             done();
         });
 
-        //Cfor decimal input
+        //for decimal input
         test('Decimal Number Input', function(done) {
             let input = '32.5L';
             assert.equal(convertHandler.getNum(input), 32.5, 'Error: should correctly read a decimal number input');

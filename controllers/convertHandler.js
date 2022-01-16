@@ -7,7 +7,7 @@ function ConvertHandler() {
 
     result = input.match(numberRegex);
 
-    if (!numberRegex.includes(result.join(""))) {
+    if (result == !Number(result)) {
       result = [];
       result.push("invalid number");
     }

@@ -34,6 +34,16 @@ suite('Functional Tests', function() {
                     done();
                 });
             });
+
+            test('Convert an invalid number such as 3/7.2/4kg (double fraction error)', function(done) {
+                chai.request(server)
+                .get('/api/convert')
+                .query({input: '3/2/4kg'})
+                .end(function(err, res) {
+                    assert.equal(res.body, 'invalid number');
+                    done();
+                });
+            });
         });
     });
 

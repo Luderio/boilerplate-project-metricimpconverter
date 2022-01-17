@@ -19,8 +19,14 @@ module.exports = function (app) {
       response.json("invalid unit");
     }
 
+    if (initUnit === "invalid number") {
+      response.json("invalid number");
+    }
+
     response.json(toString)
   });
+
+  
 
   
 

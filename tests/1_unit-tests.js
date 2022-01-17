@@ -37,8 +37,8 @@ suite('Unit Tests', function(){
 
         //for double fraction error
         test('Double Fraction Error', function(done) {
-            let input = '1/2L';//change the logic later
-            assert.equal(convertHandler.getNum(input), 1/2, 'Error: should correctly return an error on a double-fraction (i.e. 3/2/3)');//change this later
+            let input = '3/2/4kg';//change the logic later
+            assert.equal(convertHandler.getNum(input), 'invalid number', 'Error: should correctly return an error on a double-fraction (i.e. 3/2/3)');//change this later
             done();
         });
 

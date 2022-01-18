@@ -11,6 +11,7 @@ suite('Functional Tests', function() {
 
         suite('GET /api/convert => conversion object', function() {
 
+            //Functional Test 1: Convert a valid input such as 10L
             test('Convert 15L (valid input)', function(done) {
                 chai.request(server)
                 .get('/api/convert')
@@ -25,6 +26,7 @@ suite('Functional Tests', function() {
                 });
             });
     
+            //Functional Test 2: Convert an invalid input such as 32g.
             test('Convert 32g (invalid input unit)', function(done) {
                 chai.request(server)
                 .get('/api/convert')
@@ -35,6 +37,7 @@ suite('Functional Tests', function() {
                 });
             });
 
+            //Functional Test 3: Convert an invalid number such as 3/7.2/4kg
             test('Convert an invalid number such as 3/7.2/4kg (double fraction error)', function(done) {
                 chai.request(server)
                 .get('/api/convert')
@@ -45,6 +48,7 @@ suite('Functional Tests', function() {
                 });
             });
 
+            //Functional Test 4: Convert an invalid number AND unit such as 3/7.2/4kilomegagram
             test('Convert an invalid number AND unit such as 3/7.2/4kilomegagram (invalid number and unit)', function(done) {
                 chai.request(server)
                 .get('/api/convert')
@@ -55,6 +59,7 @@ suite('Functional Tests', function() {
                 });
             });
 
+            //Functional Test 5: Convert with no number such as kg (default to 1)
             test('Convert with no number such as kg (default to 1)', function(done) {
                 chai.request(server)
                 .get('/api/convert')

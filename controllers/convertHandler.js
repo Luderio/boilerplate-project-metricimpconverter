@@ -4,6 +4,8 @@ function ConvertHandler() {
   const safeEval = (str) => {
     if (str == "invalid number") {
       return "invalid number";
+    }else if (str == "") {
+      return 1;
     }else {
       str = str.join("");
       return Function('"use strict";return (' + str + ")")();
@@ -44,9 +46,6 @@ function ConvertHandler() {
       result = numbers;
     }
 
-    if (numbers.length == 0) {
-      result = "1";
-    }
 
     return safeEval(result);
   };

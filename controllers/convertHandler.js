@@ -44,6 +44,10 @@ function ConvertHandler() {
       result = numbers;
     }
 
+    if (result == "") {
+      result = "1";
+    }
+
     return safeEval(result);
   };
   

@@ -46,7 +46,7 @@ suite('Unit Tests', function(){
         //Unit Test 6: convertHandler should correctly default to a numerical input of 1 when no numerical input is provided.
         test('Default Input of 1', function(done) {
             let input = 'L';//change the logic later
-            assert.equal(convertHandler.getNum(input), 'L', 'Error: input should correctly default to a numerical input of 1 when no numerical input is provided.');
+            assert.equal(convertHandler.getNum(input), '1', 'Error: input should correctly default to a numerical input of 1 when no numerical input is provided.');
             done();
         });
     });
@@ -92,7 +92,7 @@ suite('Unit Tests', function(){
 
         test('convertHandler should correctly return the spelled-out string unit for each valid input', function(done) {
             let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
-            let expect = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms', 'gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms'];
+            let expect = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms'];
 
             input.forEach((units, i) => {
                 assert.equal(convertHandler.getReturnUnit(units), expect[i], 'Error: invalid Spelled-out Units');

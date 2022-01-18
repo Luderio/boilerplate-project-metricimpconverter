@@ -44,6 +44,10 @@ function ConvertHandler() {
       result = numbers;
     }
 
+    if (numbers.length == 0) {
+      result = "1";
+    }
+
     return safeEval(result);
   };
   
@@ -120,45 +124,21 @@ function ConvertHandler() {
 
 
     if (initUnit == "gal" || initUnit == "GAL") {
-      if (initNum == "") {
-        initNum = 1;
-      }else {
-        result = (initNum * galToL).toFixed(5);
-      }
+      result = (initNum * galToL).toFixed(5);
     }else if (initUnit == "l" || initUnit == "L") {
-      if (initNum == "") {
-        initNum = 1;
-      }else {
-        result = (initNum / galToL).toFixed(5);
-      }
+      result = (initNum / galToL).toFixed(5);
     }
 
     if (initUnit == "lbs" || initUnit == "LBS") {
-      if (initNum == "") {
-        initNum = 1;
-      }else {
-        result = (initNum * lbsToKg).toFixed(5);
-      }
+      result = (initNum * lbsToKg).toFixed(5);
     }else if (initUnit == "kg" || initUnit == "KG") {
-      if (initNum == "") {
-        initNum = 1;
-      }else {
-        result = (initNum / lbsToKg).toFixed(5);
-      }
+      result = (initNum / lbsToKg).toFixed(5);
     }
 
     if (initUnit == "mi" || initUnit == "MI") {
-      if (initNum == "") {
-        initNum = 1;
-      }else {
-        result = (initNum * miToKm).toFixed(5);
-      }
+      result = (initNum * miToKm).toFixed(5);
     }else if (initUnit == "km" || initUnit == "KM") {
-      if (initNum == "") {
-        initNum = 1;
-      }else {
-        result = (initNum / miToKm).toFixed(5);
-      }
+      result = (initNum / miToKm).toFixed(5);
     }
     
     return Number(result);

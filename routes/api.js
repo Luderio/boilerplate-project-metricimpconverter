@@ -19,7 +19,7 @@ module.exports = function (app) {
       response.json("invalid unit");
     }
 
-    if (initUnit === "invalid number") {
+    if (initNum === "invalid number") {
       response.json("invalid number");
     }
 

@@ -2,29 +2,49 @@ function ConvertHandler() {
 
   //code to handle fractions.
   const safeEval = (str) => {
-   return Function('"use strict";return (' + str + ")")();
-}
+    if (str == "invalid number") {
+      return "invalid number";
+    }else {
+      str = str.join("");
+      return Function('"use strict";return (' + str + ")")();
+    }
+ }
   
   //to get the number on the input without the unit.
   this.getNum = function(input) {
-    let numberRegex = /[\d]|[\d.\d]|[\d/\d]/g;
-    let invalidNumberRegex = /^[\d.\d.\d$]|^[\d/\d/\d$]/g;//remove later
+    let numberInput = input.split("");
     let result;
 
-    if (input.match(numberRegex)) {
-      result = input.match(numberRegex);
+    let numbers = numberInput.filter(number => {
+      if (Number(number) || number == "0" || number == "." || number == "/") {
+        return number;
+      }
+    });
+
+    let dot = [];
+    let slash = [];
+
+    let invalidNumber = numbers.map(number => {
+      if (number == ".") {
+        dot.push(number);
+      }else if (number == "/") {
+        slash.push(number);
+      }
+    });
+
+    if (dot.length == 2 && slash.length == 2) {
+      result = "invalid number";
+    }else if (dot.length == 2 && slash.length == 0) {
+      result = "invalid number";
+    }else if (dot.length == 1 && slash.length == 2) {
+      result = "invalid number";
+    }else if (dot.length == 0 && slash.length == 2) {
+      result = "invalid number";
     }else {
-      result = [];
-      result.push("invalid number");
+      result = numbers;
     }
 
-    result = result.join("");//joins the result array.
-    
-    //for testing/troubleshooting. Remove later.
-    console.log("output: ");
-    console.log(result);
-
-    return safeEval(result);//returns evaluated input.
+    return safeEval(result);
   };
   
   this.getUnit = function(input) {

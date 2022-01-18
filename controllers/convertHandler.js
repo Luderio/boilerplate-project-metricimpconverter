@@ -44,10 +44,6 @@ function ConvertHandler() {
       result = numbers;
     }
 
-    if (result == "") {
-      result = "1";
-    }
-
     return safeEval(result);
   };
   
@@ -121,6 +117,10 @@ function ConvertHandler() {
     const miToKm = 1.60934;
 
     let result;
+
+    if (initNum == "") {
+      initNum = "1";
+    }
 
     if (initUnit == "gal" || initUnit == "GAL") {
       result = (initNum * galToL).toFixed(5);

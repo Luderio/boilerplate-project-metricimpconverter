@@ -118,26 +118,47 @@ function ConvertHandler() {
 
     let result;
 
-    if (initNum == "") {
-      initNum = "1";
-    }
 
     if (initUnit == "gal" || initUnit == "GAL") {
-      result = (initNum * galToL).toFixed(5);
+      if (initNum == "") {
+        initNum = 1;
+      }else {
+        result = (initNum * galToL).toFixed(5);
+      }
     }else if (initUnit == "l" || initUnit == "L") {
-      result = (initNum / galToL).toFixed(5);
+      if (initNum == "") {
+        initNum = 1;
+      }else {
+        result = (initNum / galToL).toFixed(5);
+      }
     }
 
     if (initUnit == "lbs" || initUnit == "LBS") {
-      result = (initNum * lbsToKg).toFixed(5);
+      if (initNum == "") {
+        initNum = 1;
+      }else {
+        result = (initNum * lbsToKg).toFixed(5);
+      }
     }else if (initUnit == "kg" || initUnit == "KG") {
-      result = (initNum / lbsToKg).toFixed(5);
+      if (initNum == "") {
+        initNum = 1;
+      }else {
+        result = (initNum / lbsToKg).toFixed(5);
+      }
     }
 
     if (initUnit == "mi" || initUnit == "MI") {
-      result = (initNum * miToKm).toFixed(5);
+      if (initNum == "") {
+        initNum = 1;
+      }else {
+        result = (initNum * miToKm).toFixed(5);
+      }
     }else if (initUnit == "km" || initUnit == "KM") {
-      result = (initNum / miToKm).toFixed(5);
+      if (initNum == "") {
+        initNum = 1;
+      }else {
+        result = (initNum / miToKm).toFixed(5);
+      }
     }
     
     return Number(result);

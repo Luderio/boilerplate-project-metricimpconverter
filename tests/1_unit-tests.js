@@ -91,11 +91,11 @@ suite('Unit Tests', function(){
     suite('Function convertHandler.spellOutUnit(unit)', function() {
 
         test('convertHandler should correctly return the spelled-out string unit for each valid input', function(done) {
-            let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg'];
-            let expect = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms'];
+            let input = ['gal', 'l', 'mi', 'km', 'lbs', 'kg', 'GAL', 'L', 'MI', 'KM', 'LBS', 'KG'];
+            let expect = ['gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms', 'gallons', 'liters', 'miles', 'kilometers', 'pounds', 'kilograms'];
 
             input.forEach((units, i) => {
-                assert.equal(convertHandler.getReturnUnit(units), expect[i], 'Error: invalid Spelled-out Units');
+                assert.equal(convertHandler.spellOutUnit(units), expect[i], 'Error: invalid Spelled-out Units');
             });
             done();
         });

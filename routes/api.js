@@ -23,8 +23,10 @@ module.exports = function (app) {
       response.json("invalid number");
     }
 
-    if (initNum == "invalid number" && initUnit == "invalid unit") {
-      response.json("invalid number and unit");
+    if (initNum == "invalid number") {
+      if (initUnit == "invalid unit") {
+        response.json("invalid number and unit");
+      }
     }
 
     response.json(toString)
